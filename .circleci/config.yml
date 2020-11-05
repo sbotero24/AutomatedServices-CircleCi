@@ -7,3 +7,13 @@ jobs:
       - checkout
       - run: mvn install
       - run: mvn verify
+      - slack/notify:
+          color: '#42e2f4'
+          message: Mensaje llega a Slack
+          webhook: webhook
+orbs:
+  slack: circleci/slack@4.1.1
+workflows:
+  your-workflow:
+    jobs:
+      - build
