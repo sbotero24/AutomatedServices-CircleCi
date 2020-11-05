@@ -1,4 +1,6 @@
 version: 2.1
+orbs:
+  slack: circleci/slack@4.1.1
 jobs:
   build:
     docker:
@@ -11,9 +13,3 @@ jobs:
           color: '#42e2f4'
           message: Mensaje llega a Slack
           webhook: webhook
-orbs:
-  slack: circleci/slack@4.1.1
-workflows:
-  your-workflow:
-    jobs:
-      - build
