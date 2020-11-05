@@ -13,3 +13,14 @@ jobs:
           command: |
             mvn install
             mvn verify
+
+  automation_notification_sand:
+    docker:
+      - image: cibuilds/base:latest
+    steps:
+      - slack/notify:
+          channel: chillout
+          color: '#42e2f4'
+          mentions: 'here'
+          message: Do you want to see the automatic report scheduled in SANDBOX env? go to https://e2e-testing-reports.s3.amazonaws.com/be/sandbox/<< pipeline.id >>/site/serenity/index.html
+          webhook: https://hooks.slack.com/services/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
