@@ -27,7 +27,13 @@ jobs:
 #          command: |
 #            echo 'ejecutando el orbs de maven'
       - store_test_results:
-          path: ./AutomationServices-CircleCi/target/site/serenity
+          path: ~/test-results
+      - store_artifacts:
+          path: ~/test-results/junit
+      - persist_to_workspace:
+         root: .
+         paths:
+           - AutomationServices-CircleCi/target
 ######################
 #workflows:          #
 #  maven_test:       #
