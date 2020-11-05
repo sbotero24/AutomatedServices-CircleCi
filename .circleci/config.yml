@@ -31,21 +31,21 @@ jobs:
           mentions: 'here'
           message: finalizo la ejecucion de la integracion continua
 
-  prueba_echo_comando:
-    docker:
-      - image: circleci/openjdk:8-jdk-node
-    step:
-      -run:
-        name: prueba con otro
-        command: |
-          echo 'segunda prueba'
+#  prueba_echo_comando:
+#    docker:
+#      - image: circleci/openjdk:8-jdk-node
+#    step:
+#      -run:
+#        name: prueba con otro
+#        command: |
+#          echo 'segunda prueba'
 
 
 workflows:
   build_test_norify:
     jobs:
       - build_test_norify
-      - rueba_echo_comando
+#      - rueba_echo_comando
 #      - maven/test
 
 
