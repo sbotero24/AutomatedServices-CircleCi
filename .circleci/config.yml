@@ -5,10 +5,7 @@ orbs:
 
 jobs:
   build and test:
-    docker:
-      - image: circleci/openjdk:8-jdk-node
     workflows:
       maven_test:
         jobs:
           - maven/test
-
