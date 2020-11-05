@@ -13,6 +13,7 @@ jobs:
           command: |
             mvn install
             mvn verify
+            echo mensaje
 
   automation_notify:
     docker:
