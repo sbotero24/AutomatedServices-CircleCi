@@ -10,24 +10,24 @@ jobs:
     steps:
       - checkout
 #      - maven/test
-      - run:
-          name: install maven and execute
-          command: |
-            mvn install
-            mvn verify
-            echo 'agregando el reporte generado por serenity'
-            mvn serenity:aggregate
-      - run:
-          name: hello Word
-          command: |
-            echo 'Hello World!'
-            echo 'finaliza las primeras compilaciones'
+#      - run:
+#          name: install maven and execute
+#          command: |
+#            mvn install
+#            mvn verify
+#            echo 'agregando el reporte generado por serenity'
+#            mvn serenity:aggregate
+#      - run:
+#          name: hello Word
+#          command: |
+#            echo 'Hello World!'
+#            echo 'finaliza las primeras compilaciones'
 #      - run:
 #          name: probando el orbe de maven
 #          command: |
 #            echo 'ejecutando el orbs de maven'
       - store_test_results:
-          path: test-results
+          path: ./Users/santiago.botero/Documents/PersonalTraining/AutomationServices-CircleCi/target/site/serenity
 ######################
 #workflows:          #
 #  maven_test:       #
