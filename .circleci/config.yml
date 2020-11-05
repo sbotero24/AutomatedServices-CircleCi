@@ -27,16 +27,16 @@ jobs:
           command: |
             echo 'ejecutando el orbs de maven'
 
-  automation_notification_qa:
-    docker:
-      - image: circleci/openjdk:8-jdk-node
-    steps:
-      - slack/notify:
-          channel: chillout
-          color: '#42e2f4'
-          mentions: 'here'
-          message: Do you want to see the automatic report scheduled in QA env? go to https://e2e-testing-reports.s3.amazonaws.com/be/qa/<< pipeline.id >>/site/serenity/index.html
-          webhook: ${SLACK_WEBHOOK_AUTOMATION}
+#  automation_notification_qa:
+#    docker:
+#      - image: circleci/openjdk:8-jdk-node
+#    steps:
+#      - slack/notify:
+#          channel: chillout
+#          color: '#42e2f4'
+#          mentions: 'here'
+#          message: Do you want to see the automatic report scheduled in QA env? go to https://e2e-testing-reports.s3.amazonaws.com/be/qa/<< pipeline.id >>/site/serenity/index.html
+#          webhook: ${SLACK_WEBHOOK_AUTOMATION}
 
 ######################
 #workflows:          #
