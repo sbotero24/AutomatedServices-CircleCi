@@ -40,29 +40,60 @@
 #    jobs:           #
 #      - maven/test  #
 ######################
+
+
+#version: 2.1
+#orbs:
+#  slack: circleci/slack@3.4.0
+#  maven: circleci/maven@1.0.3
+#
+#jobs:
+#  build:
+#    docker:
+#      - image: circleci/openjdk:8-jdk-node
+#    steps:
+#      - checkout
+#      - run: echo "this is the build job"
+#  test:
+#    docker:
+#      - image: circleci/openjdk:8-jdk-node
+#    steps:
+#      - checkout
+#      - run: echo "this is the test job"
+#
+#  automation:
+#    docker:
+#      - image: circleci/openjdk:8-jdk-node
+#    steps:
+#      - slack/notify:
+#          channel: chillout
+#          color: '#42e2f4'
+#          mentions: 'here'
+#          message: El pipeline fue ejecutado
+#          webhook: ${SLACK_WEBHOOK_AUTOMATION}
+
 version: 2.1
 orbs:
-  slack: circleci/slack@3.4.0
   maven: circleci/maven@1.0.3
-
+  slack: circleci/slack@3.4.2
 jobs:
-  build:
-    docker:
-      - image: circleci/openjdk:8-jdk-node
+  build-test-and-notify:
+    executor:
+      name: compilar ejecutar y notificar
     steps:
       - checkout
-      - run: echo "this is the build job"
-  test:
-    docker:
-      - image: circleci/openjdk:8-jdk-node
-    steps:
-      - checkout
-      - run: echo "this is the test job"
-
-# Orchestrate our job run sequence
+      - run:
+          name: maven verify
+          command: mvn verify
+      - run: mvn clean verify
+      - slack/notify:
+          color: "#42e2f4"
+          mentions: 'here'
+          message: A custom message to notify the channel about the latest build
+      - slack/status:
+          fail_only: false
+          mentions: 'here'
 workflows:
-  build_and_test:
+  build-and-notify:
     jobs:
-      - build
-      - test
-#      - maven/test
+      - build-test-and-notify
