@@ -12,17 +12,5 @@ jobs:
       - run:
           name: maven completa
           command: |
-            #Project compile
             mvn --version
-            mvn clean compile
             mvn clean verify
-  automation_notification:
-    docker:
-      - image: circleci/openjdk:8-jdk-node
-    steps:
-      - slack/notify:
-          channel: chillout
-          color: '#42e2f4'
-          mentions: 'here'
-          message: Do you want to see the automatic report scheduled in QA env? go to https://e2e-testing-reports.s3.amazonaws.com/be/qa/<< pipeline.id >>/site/serenity/index.html
-          webhook: https://hooks.slack.com/services/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
