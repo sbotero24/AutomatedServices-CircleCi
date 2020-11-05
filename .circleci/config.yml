@@ -3,7 +3,7 @@ orbs:
   slack: circleci/slack@3.4.0
 
 jobs:
-  build:
+  build and test:
     docker:
       - image: circleci/openjdk:8-jdk-node
     steps:
@@ -13,3 +13,17 @@ jobs:
           command: |
             mvn install
             mvn verify
+
+  slack notifications:
+    docker:
+      - image: circleci/openjdk:8-jdk-node
+    steps:
+      - slack/notify:
+          color: '#42e2f4'
+          mentions: 'USERID1,USERID2,'
+          message: This is a custom message notification
+          webhook: webhook
+  workflows:
+    your-workflow:
+      jobs:
+        - build
