@@ -3,7 +3,7 @@ orbs:
   slack: circleci/slack@3.4.0
 
 jobs:
-  build_completo:
+  build:
     docker:
       - image: circleci/openjdk:8-jdk-node
     steps:
