@@ -4,5 +4,6 @@ jobs:
     docker:
       - image: circleci/openjdk:8-jdk-node
     steps:
+      - checkout
       - run: mvn install
       - run: mvn verify
