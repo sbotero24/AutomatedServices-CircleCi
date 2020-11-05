@@ -3,12 +3,19 @@ version: 2.1
 orbs:
   maven: circleci/maven@0.0.12
   slack: circleci/slack@4.1.1
-
-workflows:
-  maven_test:
-    jobs:
-      - maven/test # checkout, build, test, and upload test results
-
+jobs:
+  build_and_test:
+    docker:
+      - image: circleci/openjdk:8-jdk-node
+    steps:
+      - checkout
+      - run:
+          name: maven completa
+          command: |
+            #Project compile
+            mvn --version
+            mvn clean compile
+            mvn clean verify
   automation_notification:
     docker:
       - image: circleci/openjdk:8-jdk-node
