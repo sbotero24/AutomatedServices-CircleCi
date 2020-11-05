@@ -1,11 +1,22 @@
+#version: 2.1
+#
+#orbs:
+#  maven: circleci/maven@0.0.12
+#
+#workflows:
+#  maven_test:
+#    jobs:
+#      - maven/test # checkout, build, test, and upload test results
+
 version: 2.1
-
-orbs:
-  maven: circleci/maven@0.0.12
-
-workflows:
-  maven_test:
-    jobs:
-      - maven/test # checkout, build, test, and upload test results
-      - mvn install
-      - mvn clean verify
+jobs:
+  build:
+    orbs:
+      maven: circleci/maven@0.0.12
+    steps:
+      - run:
+          name: The First Step
+          command: |
+            echo 'Hello World!'
+            echo 'This is the delivery pipeline'
+            mvn clean verify
