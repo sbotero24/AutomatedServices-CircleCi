@@ -2,7 +2,6 @@ import models.users.Datum;
 import net.serenitybdd.junit.runners.SerenityRunner;
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.rest.abilities.CallAnApi;
-import org.eclipse.jetty.websocket.api.StatusCode;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import pojouser.UserCreate;
@@ -29,7 +28,6 @@ public class SerenityInitialTest {
         santiago.attemptsTo(
                 GetUsers.from(2)
         );
-
 
         santiago.should(
                 seeThat("el codigo de respuesta", ResponseCode.was(), equalTo(200))
@@ -63,7 +61,7 @@ public class SerenityInitialTest {
         );
 
         santiago.should(
-                seeThat("el codigo de creacion de usuario es valido", ResponseCode.was(),equalTo(201)));
+                seeThat("el codigo de creacion de usuario es valido", ResponseCode.was(), equalTo(200)));
 
     }
 
@@ -91,7 +89,7 @@ public class SerenityInitialTest {
 //        );
 
         santiago.should(
-                seeThat("el codigo de creacion de usuario es valido", ResponseCode.was(),equalTo(201)));
+                seeThat("el codigo de creacion de usuario es valido", ResponseCode.was(), equalTo(200)));
 
     }
 

@@ -1,1 +1,1 @@
-<?xml version="1.0" encoding="UTF-8"?><testsuite errors="0" failures="0" name="SerenityInitialTest" skipped="0" tests="1" time="3.96" timestamp="2020-11-04 05:46:10"><testcase classname="SerenityInitialTest" name="Register user with models test"/></testsuite>
+<?xml version="1.0" encoding="UTF-8"?><testsuite errors="0" failures="0" name="SerenityInitialTest" skipped="0" tests="1" time="3.36" timestamp="2020-11-05 06:46:45"><testcase classname="SerenityInitialTest" name="Register user with models test"/></testsuite>

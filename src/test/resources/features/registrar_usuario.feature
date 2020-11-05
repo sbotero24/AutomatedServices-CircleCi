@@ -12,5 +12,5 @@ Característica: yo como automatizador requiero que validar que el servicio
     Ejemplos:
 
       | user     | email              | pass   | sc  |
-      | Santiago | eve.holt@reqres.in | pistol | 201 |
+      | Santiago | eve.holt@reqres.in | pistol | 200 |
 
