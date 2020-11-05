@@ -4,7 +4,7 @@ orbs:
   maven: circleci/maven@1.0.3
 
 jobs:
-  build:
+  build_test_norify:
     docker:
       - image: circleci/openjdk:8-jdk-node
     steps:
@@ -26,6 +26,15 @@ jobs:
           name: probando el orbe de maven
           command: |
             echo 'ejecutando el orbs de maven'
+      - slack/notify:
+          color: "#42e2f4"
+          mentions: "yemiwebby,"
+          message: A custom message to notify the channel about the latest build
+
+workflows:
+  build_test_norify:
+    jobs:
+      - build_test_norify
 
 #  automation_notification_qa:
 #    docker:
