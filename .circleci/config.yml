@@ -14,14 +14,7 @@ jobs:
             mvn install
             mvn verify
             echo mensaje
-
-  automation_notify:
-    docker:
-      - image: circleci/openjdk:8-jdk-node
-    steps:
-      - slack/notify:
-          channel: chillout
-          color: '#42e2f4'
-          mentions: 'here'
-          message: mensaje de la anotificacion de circleci
-          webhook: https://hooks.slack.com/services/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
+      - run:
+          name: hello Word
+          command: |
+            echo 'Hello World!'
