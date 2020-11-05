@@ -35,7 +35,7 @@ workflows:
   build_test_norify:
     jobs:
       - build_test_norify
-#      - maven/test
+      - maven/test
 
 #  automation_notification_qa:
 #    docker:
