@@ -22,19 +22,12 @@ jobs:
           command: |
             echo 'Hello World!'
             echo 'finaliza las primeras compilaciones'
-      - run:
-          name: probando el orbe de maven
-          command: |
-            echo 'ejecutando el orbs de maven'
+#      - run:
+#          name: probando el orbe de maven
+#          command: |
+#            echo 'ejecutando el orbs de maven'
       - store_test_results:
-          path: ~/test-results
-      - store_artifacts:
-          path: ~/test-results/junit
-      - persist_to_workspace:
-          root: .
-          paths:
-            - AutomationServices-CircleCi/target
-
+          path: test-results
 ######################
 #workflows:          #
 #  maven_test:       #
