@@ -8,10 +8,5 @@ jobs:
     docker:
       - image: circleci/openjdk:8-jdk-node
     steps:
-      - checkout
       - maven/test
-      - run:
-          name: install maven and execute
-          command: |
-            mvn install
-            mvn verify
+
