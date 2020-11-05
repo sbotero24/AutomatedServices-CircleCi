@@ -14,13 +14,13 @@ jobs:
             mvn install
             mvn verify
 
-  automation_notification_sand:
+  automation_notify:
     docker:
-      - image: cibuilds/base:latest
+      - image: circleci/openjdk:8-jdk-node
     steps:
       - slack/notify:
           channel: chillout
           color: '#42e2f4'
           mentions: 'here'
-          message: Do you want to see the automatic to /site/serenity/index.html
+          message: mensaje de la anotificacion de circleci
           webhook: https://hooks.slack.com/services/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
