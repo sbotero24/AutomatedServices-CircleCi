@@ -14,16 +14,13 @@ jobs:
             mvn install
             mvn verify
 
-  slack notifications:
+  test orb maven:
     docker:
       - image: circleci/openjdk:8-jdk-node
-    steps:
-      - slack/notify:
-          color: '#42e2f4'
-          mentions: 'USERID1,USERID2,'
-          message: This is a custom message notification
-          webhook: webhook
-  workflows:
-    your-workflow:
-      jobs:
-        - build
+    orbs:
+      maven: circleci/maven@1.0.3
+    version: 2.1
+    workflows:
+      maven_test:
+        jobs:
+          - maven/test
