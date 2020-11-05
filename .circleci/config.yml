@@ -46,13 +46,13 @@ orbs:
   maven: circleci/maven@1.0.3
 
 jobs:
-  build_sd:
+  build:
     docker:
       - image: circleci/openjdk:8-jdk-node
     steps:
       - checkout
       - run: echo "this is the build job"
-  test_automation:
+  test:
     docker:
       - image: circleci/openjdk:8-jdk-node
     steps:
@@ -60,9 +60,9 @@ jobs:
       - run: echo "this is the test job"
 
 # Orchestrate our job run sequence
-#workflows:
-#  build_and_test:
-#    jobs:
-#      - build
-#      - test
+workflows:
+  build_and_test:
+    jobs:
+      - build
+      - test
 #      - maven/test
