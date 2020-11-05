@@ -82,6 +82,13 @@ jobs:
       name: node/default
     steps:
       - checkout
+      - run:
+          name: install maven and execute
+          command: |
+            mvn install
+            mvn verify
+            echo 'agregando el reporte generado por serenity'
+            mvn serenity:aggregate
       - slack/notify:
           color: "#42e2f4"
           mentions: "yemiwebby,"
