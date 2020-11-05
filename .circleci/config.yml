@@ -1,6 +1,7 @@
 version: 2.1
 orbs:
   slack: circleci/slack@3.4.0
+  maven: circleci/maven@1.0.3
 
 jobs:
   build:
@@ -18,3 +19,8 @@ jobs:
           name: hello Word
           command: |
             echo 'Hello World!'
+            echo 'finaliza las primeras compilaciones'
+workflows:
+  maven_test:
+    jobs:
+      - maven/test
