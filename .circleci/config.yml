@@ -7,7 +7,6 @@ workflows:
   Compliar y ejecutar Test:
     jobs:
       - maven/test # checkout, build, test, and upload test results
-        command: '-X verify'
   send-notification:
     jobs:
       - notify:
