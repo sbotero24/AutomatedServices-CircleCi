@@ -30,10 +30,10 @@ jobs:
           path: ~/test-results
       - store_artifacts:
           path: ~/test-results/junit
-            - persist_to_workspace:
-                root: .
-                paths:
-                  - AutomationServices-CircleCi/target
+      - persist_to_workspace:
+          root: .
+          paths:
+            - AutomationServices-CircleCi/target
 
 ######################
 #workflows:          #
