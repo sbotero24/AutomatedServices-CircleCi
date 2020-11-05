@@ -74,25 +74,25 @@
 
 version: 2.1
 orbs:
-  maven: circleci/maven@1.0.3
+  node: circleci/node@3.0.0
   slack: circleci/slack@3.4.2
 jobs:
   build-test-and-notify:
     executor:
-      name: compilar ejecutar y notificar
+      name: node/default
     steps:
       - checkout
       - run:
-          name: maven verify
-          command: mvn verify
-      - run: mvn clean verify
+          name: Install dependencies
+          command: npm install
+      - run: npm test
       - slack/notify:
           color: "#42e2f4"
-          mentions: 'here'
+          mentions: "yemiwebby,"
           message: A custom message to notify the channel about the latest build
       - slack/status:
-          fail_only: false
-          mentions: 'here'
+          fail_only: true
+          mentions: "yemiwebby"
 workflows:
   build-and-notify:
     jobs:
