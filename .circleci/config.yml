@@ -28,13 +28,14 @@ jobs:
             echo 'ejecutando el orbs de maven'
       - slack/notify:
           color: "#42e2f4"
-          mentions: "yemiwebby,"
-          message: A custom message to notify the channel about the latest build
+          mentions: 'here'
+          message: finalizo la ejecucion de la integracion continua
 
 workflows:
   build_test_norify:
     jobs:
       - build_test_norify
+#      - maven/test
 
 #  automation_notification_qa:
 #    docker:
