@@ -1,4 +1,2 @@
 "Story","Title","Result","Date","Stability","Duration (s)"
-"Serenity initial test","Register user test","SUCCESS","2020-11-05T20:40:14.998-05:00[America/Bogota]","0.0","3.14"
-"Serenity initial test","Register user with models test","SUCCESS","2020-11-05T20:40:18.234-05:00[America/Bogota]","0.0","0.88"
-"Serenity initial test","Get users","SUCCESS","2020-11-05T20:40:19.114-05:00[America/Bogota]","0.0","0.61"
+"yo como automatizador requiero que validar que el servicio","Registro exitoso de clientes","ERROR","2020-11-06T18:00:55.792-05:00[America/Bogota]","0.0","0.58"
