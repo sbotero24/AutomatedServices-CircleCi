@@ -1,13 +1,11 @@
 package tasks;
 
 import io.restassured.http.ContentType;
-import io.restassured.response.Response;
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Performable;
 import net.serenitybdd.screenplay.Task;
 import net.serenitybdd.screenplay.rest.interactions.Post;
 
-import static io.restassured.RestAssured.given;
 import static net.serenitybdd.screenplay.Tasks.instrumented;
 
 public class RegisterUser implements Task {

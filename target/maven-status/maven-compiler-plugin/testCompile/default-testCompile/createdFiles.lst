@@ -1,1 +1,3 @@
+stepDefinitions/RegistrarUsuario.class
+runners/Runner.class
 SerenityInitialTest.class

@@ -1,2 +1,8 @@
-tasks/GetUsers.class
+tasks/RegisterUser.class
+models/users/Users.class
+models/users/Datum.class
+pojouser/UserCreate.class
 question/ResponseCode.class
+tasks/GetJsonResponse.class
+tasks/GetUsers.class
+models/users/Ad.class
